@@ -1,0 +1,24 @@
+Id,Name,Age
+1,Nodir,29
+2,Huniddin,25
+3,Gulirano,20
+4,Muqaddas,25
+5,Hamzahon,23
+6,Akmal,18
+
+d = {"Id":[1,2,3,4,5,6],
+     "Name":['A','B','C','D','H'],
+     "Age":[12,23,52,51]}
+
+
+# Read CSV data and create a dictionary
+d = {"Id": [], "Name": [], "Age": []}
+
+with open("people.csv", newline='') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        d["Id"].append(int(row["Id"]))
+        d["Name"].append(row["Name"])
+        d["Age"].append(int(row["Age"]))
+
+print(d)
